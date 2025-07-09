@@ -1,33 +1,51 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import userImg from './assets/user.png'
+import eduImg from './assets/graduate.png'
+import workImg from './assets/building.png'
+import skillImg from './assets/settings.png'
+import Personal from './Components/Personal.jsx'
+import Education from './Components/Education.jsx'
+import PreviewCV from './Components/PreviewCV.jsx'
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
+function App(){
+  const [personalForm, setPersonalForm] = useState({
+    name: '',
+    location: '',
+    phone: '',
+    email: ''
+  })
+  const updatePersonalForm = (e) => {
+    setPersonalForm({
+      ...personalForm, [e.target.id]: e.target.value
+    })
+  }
+  const [educationForm, setEducationForm] = useState({})
+  const updateEducationForm = (e) => {
+    console.log('wow')
+    setEducationForm({
+      ...educationForm, [e.target.id]: e.target.value
+    })
+  }
+  const [render, setRender] = useState()
+  const icons = [
+    {icon: userImg, render:<Personal personalForm={personalForm} updatePersonalForm={updatePersonalForm}/>},
+    {icon: eduImg, render: <Education educationForm={educationForm} updateEducationForm={updateEducationForm} />},
+    {icon: skillImg, render:<Personal personalForm={personalForm} updatePersonalForm={updatePersonalForm}/>},
+    {icon: workImg, render:<Personal personalForm={personalForm} updatePersonalForm={updatePersonalForm}/>}
+  ]
+  
+
+  
+  return(
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    {icons.map((icon, index) => {
+      return(
+        <button key={index} onClick={() => {setRender(icon.render)}}><img src={icon.icon} alt="" /></button>
+      )
+    })}
+    {render}
+    <PreviewCV personalForm={personalForm} educationForm={educationForm}/>
     </>
   )
 }
