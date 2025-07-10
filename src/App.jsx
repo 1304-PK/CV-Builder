@@ -1,16 +1,19 @@
 import { useState } from 'react'
+import './App.css'
 import userImg from './assets/user.png'
 import eduImg from './assets/graduate.png'
 import workImg from './assets/building.png'
 import skillImg from './assets/settings.png'
+import projectImg from './assets/project.png'
 import Personal from './Components/Personal.jsx'
 import Education from './Components/Education.jsx'
 import Skill from './Components/Skill.jsx'
 import Work from './Components/Work.jsx'
+import Project from './Components/Projects.jsx'
 import PreviewCV from './Components/PreviewCV.jsx'
 
 
-function App(){
+function App() {
   const [personalForm, setPersonalForm] = useState({})
   const updatePersonalForm = (e) => {
     setPersonalForm({
@@ -24,10 +27,10 @@ function App(){
       ...educationForm, [e.target.id]: e.target.value
     })
   }
-  const [skillform, setSkillForm] = useState({skill:''})
+  const [skillForm, setSkillForm] = useState({ skill: '' })
   const updateSkillForm = (e) => {
     setSkillForm({
-      ...skillform, [e.target.id]: e.target.value
+      ...skillForm, [e.target.id]: e.target.value
     })
   }
   const [workForm, setWorkForm] = useState({})
@@ -36,30 +39,51 @@ function App(){
       ...workForm, [e.target.id]: e.target.value
     })
   }
+  const [projectForm, setProjectForm] = useState({})
+  const updateProjectForm = (e) => {
+    setProjectForm({
+      ...projectForm, [e.target.id]: e.target.value
+    })
+  }
 
   const [form, renderForm] = useState('personal')
 
   const icons = [
-    {icon: userImg, form:'personal'},
-    {icon: eduImg, form: 'education'},
-    {icon: skillImg, form:'skill'},
-    {icon: workImg, form:'work'}
+    { icon: userImg, form: 'personal' },
+    { icon: eduImg, form: 'education' },
+    { icon: skillImg, form: 'skill' },
+    { icon: workImg, form: 'work' },
+    { icon: projectImg, form: 'project' }
   ]
-  
 
-  
-  return(
+
+
+  return (
     <>
-    {icons.map((icon, index) => {
-      return(
-        <button key={index} onClick={() => {renderForm(icon.form)}}><img src={icon.icon} alt="" /></button>
-      )
-    })}
-    {form === 'personal' && <Personal personalForm={personalForm} updatePersonalForm={updatePersonalForm}/>}
-    {form === 'education' && <Education educationForm={educationForm} updateEducationForm={updateEducationForm}/>}
-    {form === 'skill' && <Skill skillForm={skillform} updateSkillForm={updateSkillForm}/>}
-    {form === 'work' && <Work workForm={workForm} updateWorkForm={updateWorkForm}/>}
-    <PreviewCV personalForm={personalForm} educationForm={educationForm}/>
+      <header>
+        <h1>Resume Builder</h1>
+        <p>Create a professional resume in minutes</p>
+      </header>
+      <div className='main-container'>
+        <div className='form-section'>
+          {icons.map((icon, index) => {
+            return (
+              <button key={index} className='form-nav-button' onClick={() => { renderForm(icon.form) }}><img src={icon.icon} alt="" /></button>
+            )
+          })}
+          {form === 'personal' && <Personal personalForm={personalForm} updatePersonalForm={updatePersonalForm} />}
+          {form === 'education' && <Education educationForm={educationForm} updateEducationForm={updateEducationForm} />}
+          {form === 'skill' && <Skill skillForm={skillForm} updateSkillForm={updateSkillForm} />}
+          {form === 'work' && <Work workForm={workForm} updateWorkForm={updateWorkForm} />}
+          {form === 'project' && <Project projectForm={projectForm} updateProjectForm={updateProjectForm} />}
+        </div>
+        <PreviewCV
+        personalForm={personalForm}
+        educationForm={educationForm}
+        projectForm={projectForm}
+        skillForm={skillForm}
+        workForm={workForm}/>
+      </div>
     </>
   )
 }
