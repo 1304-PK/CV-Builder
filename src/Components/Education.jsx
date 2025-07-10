@@ -14,8 +14,8 @@ function Education({ educationForm, updateEducationForm }) {
                 <GenForm id="institution" label="Institution" type="text" value={educationForm.institution} onChange={updateEducationForm} />
                 <GenForm id="location" label="Location" type="text" value={educationForm.location} onChange={updateEducationForm} />
                 <GenForm id="degree" label="Degree" type="text" value={educationForm.degree} onChange={updateEducationForm} />
-                <GenForm id="start_year" label="Start Year" type="number" value={educationForm.start_year} onChange={updateEducationForm} />
-                <GenForm id="end_year" label="End Year" type="number" value={educationForm.end_year} onChange={updateEducationForm} />
+                <GenForm id="start_year" label="Start Year" type="text" value={educationForm.start_year} onChange={updateEducationForm} />
+                <GenForm id="end_year" label="End Year" type="text" value={educationForm.end_year} onChange={updateEducationForm} />
                 <GenForm id="cgpa" label="CGPA" type="number" value={educationForm.cgpa} onChange={updateEducationForm} />
             </form>
         </div>
