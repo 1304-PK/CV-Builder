@@ -10,7 +10,7 @@ function GenForm(p){
 function Personal({personalForm, updatePersonalForm}){
     return(
     <div>
-        <form>
+        <form className="form">
             <GenForm id="name" label="Name" type="text" value={personalForm.name} onChange={updatePersonalForm} />
             <GenForm id="location" label="Location" type="text" value={personalForm.location} onChange={updatePersonalForm} />
             <GenForm id="phone" label="Phone" type="number" value={personalForm.phone} onChange={updatePersonalForm} />
