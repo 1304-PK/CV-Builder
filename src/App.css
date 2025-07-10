@@ -1,42 +1,68 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  min-height: 100vh;
+  font-family: 'Poppins';
+}
+
+header{
+  background: #b580ff;
+  background: linear-gradient(90deg,rgba(181, 128, 255, 1) 0%, rgba(136, 125, 255, 1) 70%);
+  color: white;
+  font-size: 1.3rem;
   text-align: center;
+  padding: 1.5vmin 0vmin;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.main-container{
+  display: flex;
+  padding: 5vmin 3vmin;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-section{
+  flex: 1;
+  background-color: white;
+  padding: 4vmin;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px #0000001d;
+  border: 1px solid #dadada;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.form-nav-button{
 }
 
-.card {
-  padding: 2em;
+.form-nav-button img{
+  width: 3vmin;
 }
 
-.read-the-docs {
-  color: #888;
+.form{
+  font-size: 1.3rem;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4vmin;
+}
+
+.form div{
+  display: flex;
+  flex-direction: column;
+  gap: 0.3vmin;
+}
+
+.form div input{
+  font-size: 1.1rem;
+  padding: 0.5vmin 0.8vmin;
+}
+
+.preview-cv{
+  flex: 1;
+  font-family: 'EB Garamond'
 }
