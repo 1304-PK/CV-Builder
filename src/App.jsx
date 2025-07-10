@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { jsPDF } from 'jspdf'
 import './App.css'
 import userImg from './assets/user.png'
 import eduImg from './assets/graduate.png'
@@ -56,8 +57,6 @@ function App() {
     { icon: projectImg, form: 'project' }
   ]
 
-
-
   return (
     <>
       <header>
@@ -71,7 +70,7 @@ function App() {
               <button key={index} className='form-nav-button' onClick={() => { renderForm(icon.form) }}><img src={icon.icon} alt="" /></button>
             )
           })}
-          {form === 'personal' && <Personal personalForm={personalForm} updatePersonalForm={updatePersonalForm} />}
+          {form === 'personal' && <Personal personalForm={personalForm} updatePersonalForm={updatePersonalForm}/>}
           {form === 'education' && <Education educationForm={educationForm} updateEducationForm={updateEducationForm} />}
           {form === 'skill' && <Skill skillForm={skillForm} updateSkillForm={updateSkillForm} />}
           {form === 'work' && <Work workForm={workForm} updateWorkForm={updateWorkForm} />}
