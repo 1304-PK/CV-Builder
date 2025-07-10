@@ -10,7 +10,8 @@ function GenForm(p){
 function Skill({skillForm, updateSkillForm}){
     return(
     <div>
-        <form>
+        <form className="form">
+            <GenForm id="title" label="Title" type="text" value={skillForm.title} onChange={updateSkillForm} />
             <GenForm id="skill" label="Skills" type="text" value={skillForm.skill} onChange={updateSkillForm} />
         </form>
     </div>
