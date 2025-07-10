@@ -11,7 +11,12 @@ function Work({workForm, updateWorkForm}){
     return(
     <div className="form">
         <form>
-            <GenForm id="work" label="Work Experience" type="text" value={workForm.work} onChange={updateWorkForm} />
+            <GenForm id="organization" label="Organization:" type="text" value={workForm.oganization} onChange={updateWorkForm} />
+            <GenForm id="location" label="Location:" type="text" value={workForm.location} onChange={updateWorkForm} />
+            <GenForm id="job_title" label="Job Title:" type="text" value={workForm.job_title} onChange={updateWorkForm} />
+            <GenForm id="start_date" label="Start Date:" type="text" value={workForm.start_date} onChange={updateWorkForm} />
+            <GenForm id="end_date" label="End Date:" type="text" value={workForm.end_date} onChange={updateWorkForm} />
+            <GenForm id="description" label="Responsibilities/Achievements:" type="text" value={workForm.description} onChange={updateWorkForm} />
         </form>
     </div>
     )
