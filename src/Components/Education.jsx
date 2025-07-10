@@ -10,7 +10,7 @@ function GenForm(p) {
 function Education({ educationForm, updateEducationForm }) {
     return (
         <div>
-            <form>
+            <form className="form">
                 <GenForm id="institution" label="Institution" type="text" value={educationForm.institution} onChange={updateEducationForm} />
                 <GenForm id="location" label="Location" type="text" value={educationForm.location} onChange={updateEducationForm} />
                 <GenForm id="degree" label="Degree" type="text" value={educationForm.degree} onChange={updateEducationForm} />
