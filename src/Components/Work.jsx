@@ -9,7 +9,7 @@ function GenForm(p){
 
 function Work({workForm, updateWorkForm}){
     return(
-    <div>
+    <div className="form">
         <form>
             <GenForm id="work" label="Work Experience" type="text" value={workForm.work} onChange={updateWorkForm} />
         </form>
