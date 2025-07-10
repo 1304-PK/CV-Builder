@@ -1,6 +1,6 @@
 function PreviewCV({personalForm, educationForm}){
     return(
-        <div>
+        <div className="preview-cv">
             <div id="personal-info">
                 <h1>{personalForm.name}</h1>
                 <p>{personalForm.location}|{personalForm.phone}|{personalForm.email}</p>
