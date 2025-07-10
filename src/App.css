@@ -60,8 +60,14 @@ header {
 }
 
 .form div input {
-  font-size: 1.1rem;
-  padding: 0.5vmin 0.8vmin;
+  font-size: 1rem;
+  padding: 0.8vmin 1.2vmin;
+  border-radius: 8px;
+  border: 1px solid rgb(158, 158, 158);
+
+  &:focus{
+    outline: none;
+  }
 }
 
 .preview-cv {
@@ -79,6 +85,19 @@ header {
   margin-top: 15px;
 }
 
+.preview-cv span{
+  font-weight: bold;
+}
+
 #personal-info{
   text-align: center
+}
+
+.split-horizontally{
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-section{
+  text-align: end;
 }
