@@ -2,47 +2,45 @@ function PreviewCV({personalForm, educationForm, projectForm, skillForm, workFor
     return(
         <div className="preview-cv">
             <div id="personal-info">
-                <h1>{personalForm.name}</h1>
-                <p>{personalForm.location}|{personalForm.phone}|{personalForm.email}</p>
+                <h1>{personalForm.name || 'Harry James Potter'}</h1>
+                <p>{personalForm.location||'Scottish Highlands'} | {personalForm.phone||'+44 (0) 207-946-0958'} | {personalForm.email||'harrypotter@hogwarts.edu'}</p>
             </div>
             <div id="education-info">
-                <h1>Education</h1>
-                <hr />
+                <h4>EDUCATION</h4>
                 <div>
-                    <p>{educationForm.institution},{educationForm.location}</p>
-                    <p>{educationForm.degree}</p>
+                    <p>{educationForm.institution||'Hogwarts School of Witchcraft and Wizardry'},{educationForm.location||'Highlands, Scotland'}</p>
+                    <p>{educationForm.degree||'Bachelor of Wizardry, Defense Against the Dark Arts'}</p>
                 </div>
                 <div>
-                    <p>{educationForm.start_year}-{educationForm.end_year}</p>
-                    <p>CGPA: {educationForm.cgpa}</p>
+                    <p>{educationForm.start_year||'September 1991'}-{educationForm.end_year||'October 1998'}</p>
+                    <p>CGPA: {educationForm.cgpa||'8.4'}</p>
                 </div>
             </div>
             <div id="project-info">
-                <h1>Projects</h1>
-                <hr />
+                <h4>PROJECTS</h4>
                 <div>
-                <p>{projectForm.name} | {projectForm.tech_stack}</p>
-                <p>{projectForm.date}</p>
+                <p>{projectForm.name||"Marauder's Map Enhancement"} | {projectForm.tech_stack||'Revelio, Mischief Managed, Charms, Advanced Mapmaking'}</p>
+                <p>{projectForm.date||"May 1996"}</p>
                 </div>
-                <p>{projectForm.description}</p>
+                <p>{projectForm.description||"Improved the legendary Marauder’s Map with real-time location tracking, ghost detection, and unauthorized intruder alerts. Integrated magical encryption to prevent misuse."}</p>
             </div>
             <div id="work-info">
-                <h1>Experience</h1>
-                <hr />
+                <h4>EXPERIENCE</h4>
                 <div>
-                    <p>{workForm.organization}</p>
-                    <p>{workForm.job_title}</p>
+                    <p>{workForm.organization||'Department of Magical Accidents and Catastrophes'}</p>
+                    <p>{workForm.job_title||'Auror Trainee'}</p>
                 </div>
                 <div>
-                    <p>{workForm.start_date} - {workForm.end_date}</p>
-                    <p>{workForm.location}</p>
+                    <p>{workForm.start_date||'June 2024'} - {workForm.end_date||'May 2025'}</p>
+                    <p>{workForm.location||'Ministry of Magic'}</p>
                 </div>
-                <p>{workForm.description}</p>
+                <p>{workForm.description||`• Led specialized task force in neutralizing 15+ dark magic incidents across Greater London area
+                    • Collaborated with Senior Aurors to develop new protective ward systems, improving department safety protocols by 40%
+                    • Mentored 8 junior wizards in advanced defensive spell casting and emergency response procedures`}</p>
             </div>
             <div id="skill-info">
-                <h1>Technical Skills</h1>
-                <hr />
-                <p>{skillForm.title}: {skillForm.skill}</p>
+                <h4>TECHNICAL SKILLS</h4>
+                <p>{skillForm.title||'Magical Skills'}: {skillForm.skill||'Advanced Patronus Casting, Parseltongue Communication, Broomstick Flight Proficiency, Time-Turner Navigation'}</p>
             </div>
         </div>
     )
