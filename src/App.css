@@ -23,7 +23,10 @@ header {
 
 .main-container {
   display: flex;
+  flex-wrap: wrap;
+  gap: 7vmin;
   padding: 5vmin 3vmin;
+  align-items: start;
 }
 
 .form-section {
@@ -63,5 +66,19 @@ header {
 
 .preview-cv {
   flex: 1;
-  font-family: 'EB Garamond'
+  font-family: 'EB Garamond';
+  box-shadow: 0px 4px 20px #0000001d;
+  border: 1px solid #dadada;
+  border-radius: 10px;
+  padding: 7vmin 4.5vmin;
+}
+
+.preview-cv h4{
+  border-bottom: 1px solid black;
+  margin-bottom: 8px;
+  margin-top: 15px;
+}
+
+#personal-info{
+  text-align: center
 }
