@@ -57,6 +57,19 @@ function App() {
     { icon: projectImg, form: 'project' }
   ]
 
+  const [skills, setSkills] = useState([{ title: 'Magical Skills', skill: "Advanced Patronus Casting, Pareseltongue Communication" }])
+  const addSkill = () => {
+    setSkills([...skills, skillForm])
+    console.log(skills)
+  }
+  const [projects, setProjects] = useState([])
+  const addProject = () => {
+    setProjects([...projects, projectForm])
+  }
+  const [experiences, setExperiences] = useState([])
+  const addExperience = () => {
+    setExperiences([...experiences, workForm])
+  }
   return (
     <>
       <header>
@@ -65,23 +78,25 @@ function App() {
       </header>
       <div className='main-container'>
         <div className='form-section'>
-          {icons.map((icon, index) => {
-            return (
-              <button key={index} className='form-nav-button' onClick={() => { renderForm(icon.form) }}><img src={icon.icon} alt="" /></button>
-            )
-          })}
-          {form === 'personal' && <Personal personalForm={personalForm} updatePersonalForm={updatePersonalForm}/>}
+          <div className='nav-buttons-div'>
+            {icons.map((icon, index) => {
+              return (
+                <button key={index} className='form-nav-button' onClick={() => { renderForm(icon.form) }}><img src={icon.icon} alt="" /></button>
+              )
+            })}
+          </div>
+          {form === 'personal' && <Personal personalForm={personalForm} updatePersonalForm={updatePersonalForm} />}
           {form === 'education' && <Education educationForm={educationForm} updateEducationForm={updateEducationForm} />}
-          {form === 'skill' && <Skill skillForm={skillForm} updateSkillForm={updateSkillForm} />}
-          {form === 'work' && <Work workForm={workForm} updateWorkForm={updateWorkForm} />}
-          {form === 'project' && <Project projectForm={projectForm} updateProjectForm={updateProjectForm} />}
+          {form === 'skill' && <Skill skillForm={skillForm} updateSkillForm={updateSkillForm} addSkill={addSkill} skills={skills} removeSkill={setSkills} />}
+          {form === 'work' && <Work workForm={workForm} updateWorkForm={updateWorkForm} addExperience={addExperience} experiences={experiences} removeExperience={setExperiences} />}
+          {form === 'project' && <Project projectForm={projectForm} updateProjectForm={updateProjectForm} addProject={addProject} projects={projects} removeProject={setProjects} />}
         </div>
         <PreviewCV
-        personalForm={personalForm}
-        educationForm={educationForm}
-        projectForm={projectForm}
-        skillForm={skillForm}
-        workForm={workForm}/>
+          personalForm={personalForm}
+          educationForm={educationForm}
+          projects={projects}
+          skills={skills}
+          experiences={experiences} />
       </div>
     </>
   )
