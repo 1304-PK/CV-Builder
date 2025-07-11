@@ -39,10 +39,32 @@ header {
 
 }
 
-.form-nav-button {}
+.nav-buttons-div {
+  display: flex;
+  gap: 0.8vmin;
+  max-width: min-content;
+  align-items: center;
+  border: 1px solid black;
+  padding: 0.4vmin;
+  border-radius: 8px;
+  margin-bottom: 4vmin;
+}
+
+.form-nav-button {
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: rgb(212, 211, 211);
+  }
+}
 
 .form-nav-button img {
-  width: 3vmin;
+  width: 35px;
 }
 
 .form {
@@ -65,7 +87,7 @@ header {
   border-radius: 8px;
   border: 1px solid rgb(158, 158, 158);
 
-  &:focus{
+  &:focus {
     outline: none;
   }
 }
@@ -79,25 +101,65 @@ header {
   padding: 7vmin 4.5vmin;
 }
 
-.preview-cv h4{
+.preview-cv h4 {
   border-bottom: 1px solid black;
   margin-bottom: 8px;
   margin-top: 15px;
 }
 
-.preview-cv span{
+.preview-cv span {
   font-weight: bold;
 }
 
-#personal-info{
+#personal-info {
   text-align: center
 }
 
-.split-horizontally{
+.split-horizontally {
   display: flex;
   justify-content: space-between;
 }
 
-.right-section{
+.right-section {
   text-align: end;
+}
+
+.add-button {
+  margin-top: 5vmin;
+  align-self: start;
+  font-family: inherit;
+  font-size: 1.1rem;
+  padding: 0.3vmin 1vmin;
+  background-color: rgb(147, 227, 254);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:active {
+    background-color: rgb(35, 153, 192);
+  }
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1vmin;
+  margin-bottom: 3vmin;
+}
+
+.info-list-content {
+  box-shadow: 0px 4px 20px #0000001d;
+  border: 1px solid #dadada;
+  font-size: 1.2rem;
+  padding: 0.5vmin 1vmin;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10vmin;
+}
+
+.info-list-content button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
