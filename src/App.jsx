@@ -62,11 +62,14 @@ function App() {
     setSkills([...skills, skillForm])
     console.log(skills)
   }
-  const [projects, setProjects] = useState([])
+  const [projects, setProjects] = useState([{ name: "Marauder's Map Enhancement", tech_stack: "Revelio, Mischief Managed, Charms, Advanced Mapmaking", date: "May 1996", description: "Improved the legendary Marauder's Map with real-time location tracking, ghost detection, and unauthorized intruder alerts. Integrated magical encryption to prevent misuse." }])
   const addProject = () => {
     setProjects([...projects, projectForm])
   }
-  const [experiences, setExperiences] = useState([])
+  const [experiences, setExperiences] = useState([{
+    organization: 'Department of Magical Accidents and Catastrophes', job_title: 'Auror Trainee', start_date: 'June 2024', end_date: 'May 2025', location: 'Ministry of Magic', description: `• Led specialized task force in neutralizing 15+ dark magic incidents across Greater London area
+  • Collaborated with Senior Aurors to develop new protective ward systems, improving department safety protocols by 40%
+  • Mentored 8 junior wizards in advanced defensive spell casting and emergency response procedures`}])
   const addExperience = () => {
     setExperiences([...experiences, workForm])
   }
