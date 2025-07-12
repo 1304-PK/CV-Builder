@@ -5,6 +5,7 @@ function PreviewCV({ personalForm, educationForm, projects, skills, experiences 
                 <h1>{personalForm.name || 'Harry James Potter'}</h1>
                 <p>{personalForm.location || 'Scottish Highlands'} | {personalForm.phone || '+44 (0) 207-946-0958'} | {personalForm.email || 'harrypotter@hogwarts.edu'}</p>
             </div>
+            
             <div id="education-info">
                 <h4>EDUCATION</h4>
                 <div className="split-horizontally">
@@ -18,6 +19,7 @@ function PreviewCV({ personalForm, educationForm, projects, skills, experiences 
                     </div>
                 </div>
             </div>
+
             <div id="project-info">
                 <h4>PROJECTS</h4>
                 {projects.map(p => {
@@ -32,6 +34,7 @@ function PreviewCV({ personalForm, educationForm, projects, skills, experiences 
                     )
                 })}
             </div>
+
             <div id="work-info">
             <h4>EXPERIENCE</h4>
                 {experiences.map(e => {
